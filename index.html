@@ -4,16 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>BudgetSync Calendar</title>
+    
+    <!-- Manteniamo questo per semplicità. L'avviso giallo nella console non è un errore che blocca l'app. -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- I percorsi che iniziano con '/' verranno corretti automaticamente durante il Deploy -->
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#f9fafb" />
     <link rel="apple-touch-icon" href="/icon-192x192.png">
+    
     <style>
       body {
         overscroll-behavior-y: contain;
       }
     </style>
-<script type="importmap">
+  <script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.0",
@@ -29,11 +34,16 @@
 </head>
   <body class="bg-gray-50 antialiased font-sans">
     <div id="root"></div>
+    
     <script src="https://apis.google.com/js/api.js"></script>
+    
+    <!-- Questo è il punto di ingresso che il processo di Deploy userà per costruire l'app -->
     <script type="module" src="/src/index.tsx"></script>
+    
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
+          // Anche questo percorso verrà corretto automaticamente
           navigator.serviceWorker.register('/sw.js').then(registration => {
             console.log('SW registered: ', registration);
           }).catch(registrationError => {
