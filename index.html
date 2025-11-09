@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>BudgetSync Calendar</title>
     
-    <!-- Manteniamo questo per semplicità. L'avviso giallo nella console non è un errore che blocca l'app. -->
+    <!-- Manteniamo il link a Tailwind per semplicità, come da tua richiesta. -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- I percorsi che iniziano con '/' verranno corretti automaticamente durante il Deploy -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#f9fafb" />
-    <link rel="apple-touch-icon" href="/icon-192x192.png">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
     
     <style>
       body {
@@ -30,28 +29,26 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-gray-50 antialiased font-sans">
     <div id="root"></div>
     
     <script src="https://apis.google.com/js/api.js"></script>
     
-    <!-- Questo è il punto di ingresso che il processo di Deploy userà per costruire l'app -->
+    <!-- Questo è il punto di ingresso che Vite (il sistema di Deploy) userà per costruire l'app. -->
     <script type="module" src="/src/index.tsx"></script>
     
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          // Anche questo percorso verrà corretto automaticamente
-          navigator.serviceWorker.register('/sw.js').then(registration => {
-            console.log('SW registered: ', registration);
+          // Il percorso 'sw.js' è corretto perché il file verrà messo nella cartella principale del sito pubblicato.
+          navigator.serviceWorker.register('sw.js').then(registration => {
+            console.log('SW registrato:', registration);
           }).catch(registrationError => {
-            console.log('SW registration failed: ', registrationError);
+            console.log('Registrazione SW fallita:', registrationError);
           });
         });
       }
     </script>
-  <script type="module" src="/index.tsx"></script>
-</body>
+  </body>
 </html>
