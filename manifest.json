@@ -1,0 +1,22 @@
+
+{
+  "short_name": "BudgetSync",
+  "name": "BudgetSync Calendar",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#f9fafb",
+  "background_color": "#f9fafb"
+}

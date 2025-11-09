@@ -1,0 +1,5 @@
+{
+  "name": "BudgetSync Calendar",
+  "description": "A Progressive Web App for mobile that connects to Google Calendar to automatically track income and expenses based on event colors, with manual entry and statistical analysis features.",
+  "requestFramePermissions": []
+}
