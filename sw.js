@@ -1,10 +1,8 @@
-
 const CACHE_NAME = 'budgetsync-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/index.tsx',
-  // You would add other assets here like JS bundles, CSS, images
+  // Aggiungeremo altri asset quando la build funzionerà
 ];
 
 self.addEventListener('install', event => {
@@ -12,7 +10,9 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
       .then(cache => {
         console.log('Opened cache');
-        return cache.addAll(urlsToCache);
+        return cache.addAll(urlsToCache).catch(err => {
+          console.error('SW Cache addAll failed:', err);
+        });
       })
   );
 });
