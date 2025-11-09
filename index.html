@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>BudgetSync Calendar</title>
     
-    <!-- Manteniamo il link a Tailwind per semplicità, come da tua richiesta. -->
+    <!-- Manteniamo il link a Tailwind per semplicità. -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#f9fafb" />
-    <link rel="apple-touch-icon" href="icon-192x192.png">
     
     <style>
       body {
         overscroll-behavior-y: contain;
       }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.0",
@@ -41,8 +40,7 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          // Il percorso 'sw.js' è corretto perché il file verrà messo nella cartella principale del sito pubblicato.
-          navigator.serviceWorker.register('sw.js').then(registration => {
+          navigator.serviceWorker.register('/sw.js').then(registration => {
             console.log('SW registrato:', registration);
           }).catch(registrationError => {
             console.log('Registrazione SW fallita:', registrationError);
